@@ -19,6 +19,6 @@ class ContactController extends Controller
 
     public function store ()
     {
-        //ここに処理を記述
+        $contact = $request->only(['name', 'email', 'tel', 'content']);
     }
 }
