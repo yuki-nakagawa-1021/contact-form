@@ -15,69 +15,61 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お名前</th>
                     <td class="confirm-table__text">
-                        <input type="text" value="{{ $last_name }} {{ $first_name }}" readonly>
-                        <input type="hidden" name="first_name" value="{{ $first_name }}">
-                        <input type="hidden" name="last_name" value="{{ $last_name }}">
+                        <input type="text" readonly>
+                        <input type="hidden" name="first_name">
+                        <input type="hidden" name="last_name">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">性別</th>
                     <td class="confirm-table__text">
-                        @if ($gender == 1)
-                        <input type="text" value="男性" readonly>
-                        @elseif ($gender == 2)
-                        <input type="text" value="女性" readonly>
-                        @else
-                        <input type="text" value="その他" readonly>
-                        @endif
-                        <input type="hidden" name="gender" value="{{ $gender }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">メールアドレス</th>
                     <td class="confirm-table__text">
-                        <input type="email" name="email" value="{{ $contact['email'] }}" readonly>
+                        <input type="email" name="email" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">電話番号</th>
                     <td class="confirm-table__text">
-                        <input type="text" value="{{ $tel1 }}{{ $tel2 }}{{ $tel3 }}" readonly>
-                        <input type="hidden" name="tel1" value="{{ $tel1 }}">
-                        <input type="hidden" name="tel2" value="{{ $tel2 }}">
-                        <input type="hidden" name="tel3" value="{{ $tel3 }}">
+                        <input type="text" readonly>
+                        <input type="hidden" name="tel1" >
+                        <input type="hidden" name="tel2" >
+                        <input type="hidden" name="tel3" >
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">住所</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="address" value="{{ $contact['address'] }}" readonly>
+                        <input type="text" name="address" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">建物名</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="building" value="{{ $contact['building'] }}" readonly>
+                        <input type="text" name="building" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <input type="text" value="{{ $category->content }}" readonly>
-                        <input type="hidden" name="category_id" value="{{ $category_id }}">
+                        <input type="text" readonly>
+                        <input type="hidden" name="category_id">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせ内容</th>
                     <td class="confirm-table__text">
-                        <textarea name="detail" readonly>{{ $detail }}</textarea>
+                        <textarea name="detail" readonly></textarea>
                     </td>
                 </tr>
             </table>
         </div>
         <div class="form__button">
             <button class="form__button-submit" type="submit">送信</button>
-            <a href="{{ route('contact.index') }}" class="form__button-back">修正</a>
+            <a href="/" class="form__button-back">修正</a>
         </div>
     </form>
 </div>

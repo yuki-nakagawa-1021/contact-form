@@ -9,15 +9,16 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form class="form">
+    <form class="form" action="/confirm" method="POST">
+        @csrf
         <div class="form__group">
             <div class="form__group-title">
                 <span class="form__label--item">お名前</span><span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
                 <div class="form__input--text-name">
-                    <input type="text" name="first_name" placeholder="例:山田" />
-                    <input type="text" name="last_name" placeholder="例:太郎" />
+                    <input type="text" name="first_name" placeholder="例:山田" value="{{ old('first_name') }}"/>
+                    <input type="text" name="last_name" placeholder="例:太郎" value="{{ old('last_name') }}"/>
                 </div>
             </div>
         </div>
@@ -27,9 +28,9 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--radio">
-                    <input type="radio" name="gender" value="1" >男性
-                    <input type="radio" name="gender" value="2" >女性
-                    <input type="radio" name="gender" value="3" >その他
+                    <input type="radio" name="gender" value="1" {{ old('gender', 1) == 1 ? 'checked' : '' }}>男性
+                    <input type="radio" name="gender" value="2" {{ old('gender', 1) == 2 ? 'checked' : '' }}>女性
+                    <input type="radio" name="gender" value="3" {{ old('gender', 1) == 3 ? 'checked' : '' }}>その他
                 </div>
             </div>
         </div><div class="form__group">
@@ -38,7 +39,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="email" name="email" placeholder="test@example.com" />
+                    <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}"/>
                 </div>
             </div>
         </div>
@@ -48,11 +49,11 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text-tel">
-                    <input type="tel" name="tel1" placeholder="080" />
+                    <input type="tel" name="tel1" placeholder="080" value="{{ old('tel1') }}" />
                     <span>-</span>
-                    <input type="tel" name="tel2" placeholder="1234" />
+                    <input type="tel" name="tel2" placeholder="1234" value="{{ old('tel2') }}"/>
                     <span>-</span>
-                    <input type="tel" name="tel3" placeholder="5678" />
+                    <input type="tel" name="tel3" placeholder="5678" value="{{ old('tel3') }}"/>
                 </div>
             </div>
         </div>
@@ -62,7 +63,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="address" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3" />
+                    <input type="text" name="address" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}"/>
                 </div>
             </div>
         </div>
@@ -72,7 +73,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="building" placeholder="例:千駄ヶ谷マンション101" />
+                    <input type="text" name="building" placeholder="例:千駄ヶ谷マンション101" value="{{ old('building') }}"/>
                 </div>
             </div>
         </div>
@@ -94,7 +95,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--textarea">
-                    <textarea name="detail" placeholder="お問い合わせ内容をご記載ください"></textarea>
+                    <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                 </div>
             </div>
         </div>
