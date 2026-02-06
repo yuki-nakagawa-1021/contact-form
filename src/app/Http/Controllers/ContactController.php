@@ -9,7 +9,7 @@ use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
 
@@ -18,7 +18,7 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'address', 'building', 'category_id', 'detail']);
+        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'category_id', 'detail']);
 
         $tel = $request->tel1 . $request->tel2 . $request->tel3;
         $contact['tel'] = $tel;
@@ -26,14 +26,16 @@ class ContactController extends Controller
         $category = Category::find($contact['category_id']);
 
         return view('confirm', compact('contact', 'category'));
+
+        return redirect()->route('index')->withInput($request->all());
+
     }
 
     public function store(ContactRequest $request)
     {
-        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'address', 'building', 'category_id', 'detail']);
+        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'category_id', 'detail']);
 
-        $tel = $request->tel1 . $request->tel2 . $request->tel3;
-        $contact['tel'] = $tel;
+        $contact['tel'] = $request->tel1 . $request->tel2 . $request->tel3;
 
         Contact::create($contact);
 
