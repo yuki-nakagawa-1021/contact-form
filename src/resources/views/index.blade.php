@@ -21,7 +21,12 @@
                     <input type="text" name="last_name" placeholder="例:太郎" value="{{ old('last_name') }}"/>
                 </div>
                 <div class="form__error">
-                    @error('name')
+                    @error('first_name')
+                    {{ $message }}
+                    @enderror
+                </div>
+                <div class="form__error">
+                    @error('last_name')
                     {{ $message }}
                     @enderror
                 </div>
@@ -43,7 +48,8 @@
                     @enderror
                 </div>
             </div>
-        </div><div class="form__group">
+        </div>
+        <div class="form__group">
             <div class="form__group-title">
                 <span class="form__label--item">メールアドレス</span><span class="form__label--required">※</span>
             </div>
@@ -110,6 +116,11 @@
                 <div class="form__input--select">
                     <select class="form__group-content-select" name="category_id">
                         <option value="">選択してください</option>
+                        @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                            {{ $category->content }}
+                        </option>
+                        @endforeach
                     </select>
                     <div class="form__error">
                     @error('category_id')
