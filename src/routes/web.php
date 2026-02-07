@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+
 
 
 /*
@@ -28,3 +29,5 @@ Route::middleware('auth')->group(function () {
         return view('admin.index');
     })->name('admin.index');
 });
+
+Route::get('/admin', [AdminController::class, 'index']);
