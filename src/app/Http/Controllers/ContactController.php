@@ -26,19 +26,19 @@ class ContactController extends Controller
         $category = Category::find($contact['category_id']);
 
         return view('confirm', compact('contact', 'category'));
-
-        return redirect()->route('index')->withInput($request->all());
-
     }
 
     public function store(ContactRequest $request)
     {
-        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'category_id', 'detail']);
+    $contact = $request->only([
+        'first_name','last_name','gender','email',
+        'tel1','tel2','tel3','address','building','category_id','detail'
+    ]);
 
-        $contact['tel'] = $request->tel1 . $request->tel2 . $request->tel3;
+    $contact['tel'] = $request->tel1.$request->tel2.$request->tel3;
 
-        Contact::create($contact);
+    Contact::create($contact);
 
-        return view('thanks');
+    return view('thanks');
     }
 }
