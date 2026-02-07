@@ -17,7 +17,7 @@
     <div class="register-form__heading">
         <h2>Register</h2>
     </div>
-    <form class="form" action="/register" method="POST">
+    <form class="form" action="/admin" method="POST">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
