@@ -23,7 +23,8 @@ Route::get('/confirm', function () {
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 
-Route::post('/register', [AuthController::class, 'store']);
 Route::middleware('auth')->group(function () {
-    Route::post('/login', [AuthController::class, 'store']);
+    Route::get('/admin', function () {
+        return view('admin.index');
+    })->name('admin.index');
 });
