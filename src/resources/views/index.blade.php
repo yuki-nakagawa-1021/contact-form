@@ -79,15 +79,11 @@
                 </div>
                 <div class="form__error">
                     <div class="form__error">
-                    @error('tel1')
-                        {{ $message }}
-                    @enderror
-                    @error('tel2')
-                        {{ $message }}
-                    @enderror
-                    @error('tel3')
-                        {{ $message }}
-                    @enderror
+                    <div class="form__error">
+                        @if ($errors->has('tel1') || $errors->has('tel2') || $errors->has('tel3'))
+                            {{ $errors->first('tel1') ?? $errors->first('tel2') ?? $errors->first('tel3') }}
+                        @endif
+                    </div>
                 </div>
                 </div>
             </div>
