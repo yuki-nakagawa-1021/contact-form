@@ -28,6 +28,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', function () {
         return view('admin.index');
     })->name('admin.index');
+    Route::get('/export', [AdminController::class, 'export'])->name('admin.export');
 });
-
-Route::get('/admin', [AdminController::class, 'index']);

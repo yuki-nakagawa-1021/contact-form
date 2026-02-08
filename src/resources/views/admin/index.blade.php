@@ -40,7 +40,9 @@
             <button class="search-form__button-reset" type="reset">リセット</button>
         </div>
         <div class="export-form__button">
-            <button class="export-form__button-submit" type="submit">エクスポート</button>
+            <a class="export-form__button-export" href="{{ route('admin.export', request()->query()) }}">
+                エクスポート
+            </a>
         </div>
     </form>
      <div class="admin-pagination">
