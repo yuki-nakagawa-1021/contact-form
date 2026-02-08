@@ -53,7 +53,7 @@ class ContactRequest extends FormRequest
             'tel1.numeric' => '電話番号を半角数値で入力してください',
             'tel1.digits_between' => '電話番号は5桁まで数字で入力してください',
             'tel2.required' => '電話番号を入力してください',
-            'tel2.numeric' => '電話番号を半角数値で入力してください',
+            'tel2.numeric' => '電話番号を半角数字で入力してください',
             'tel2.digits_between' => '電話番号は5桁まで数字で入力してください',
             'tel3.required' => '電話番号を入力してください',
             'tel3.numeric' => '電話番号を半角数値で入力してください',
@@ -61,7 +61,7 @@ class ContactRequest extends FormRequest
             'address.required' => '住所を入力してください',
             'category_id.required' => 'お問い合わせの種類を選択してください',
             'detail.required' => 'お問い合わせ内容を入力してください',
-            'detail.max' => 'お問い合わせ内容を120文字以下で入力してください',
+            'detail.max' => 'お問い合わせ内容は120文字以内で入力してください',
         ];
     }
 }
