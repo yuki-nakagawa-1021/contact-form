@@ -2,3 +2,8 @@ svg.w-5.h-5 {
     width: 30px;
     height: 30px;
 }
+
+.admin-table__header:hover,
+.admin-table__item:hover {
+    background: #dfe7f7;
+}

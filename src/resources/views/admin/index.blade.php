@@ -20,7 +20,7 @@
     </div>
     <form class="search-form" action="/search" method="get">
         <div class="search-form__item">
-            <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください"　value="{{ old('keyword') }}">
+            <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ {{ request('keyword') }}"">
             <select class="search-form__item-select" name="gender">
                 <option value="">性別</option>
                 <option value="1">男性</option>
@@ -38,6 +38,9 @@
         <div class="search-form__button">
             <button class="search-form__button-submit" type="submit">検索</button>
             <button class="search-form__button-reset" type="reset">リセット</button>
+        </div>
+        <div class="export-form__button">
+            <button class="export-form__button-submit" type="submit">エクスポート</button>
         </div>
     </form>
      <div class="admin-pagination">
@@ -67,6 +70,11 @@
                 </td>
                 <td class="admin-table__item">{{ $contact->email }}</td>
                 <td class="admin-table__item">{{ optional($contact->category)->content }}</td>
+                <td class="admin-table__item">
+                <a class="admin-table__detail-button" >
+                    詳細
+                </a>
+            </td>
             </tr>
             @endforeach
         </table>
