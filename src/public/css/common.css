@@ -4,18 +4,20 @@ body {
 
 .header {
     background: #fff;
+    border: 1px solid rgb(115, 87, 18);
 }
 
 .header__inner {
     margin: 0 auto;
-    padding: 20px 15px;
+    padding: 8px 20px;
     max-width: 1230px;
     text-align: center;
 }
 
 .header__logo {
-    color:rgb(141, 109, 26);
+    color:rgb(115, 87, 18);
     text-decoration: none;
+    line-height: 1;
     font-size: 24px;
 }
 

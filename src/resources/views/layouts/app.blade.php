@@ -13,14 +13,16 @@
 </head>
 
 <body>
+    @unless(View::hasSection('no_header'))
     <header class="header">
         <div class="header__inner">
-                <a class="header__logo "href="/">
-                    FashionablyLate
-                </a>
-            @yield('header')
+            <div class="header__logo">
+                <h2>FashionablyLate</h2>
+                @yield('header')
+            </div>
         </div>
     </header>
+    @endunless
 
     <main>
         @yield('content')

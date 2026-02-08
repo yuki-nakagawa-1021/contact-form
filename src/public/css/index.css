@@ -5,8 +5,9 @@
 }
 
 .contact-form__heading {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: center;
+    color: rgb(115, 87, 18);
 }
 
 .form {
@@ -18,7 +19,7 @@
 .form__group {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form__label--required {
@@ -34,11 +35,22 @@
     text-align: left;
 }
 
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+}
+
+.form__group-content {
+    width: 600px;
+}
+
 .form__input--text input,
 .form__input--textarea textarea {
     padding: 10px;
-    width: 600px;
-    background: #ddd;
+    width: 100%;
+    background: #eeeff1;
     border: none;
 
     appearance: none;
@@ -50,26 +62,81 @@
 
 .form__input--textarea textarea {
     height: 180px;
+    resize: none;
+}
+
+.form__input--text-name {
+    display: flex;
+    justify-content: space-between;
 }
 
 .form__input--text-name input {
     padding: 10px;
     height: 40px;
-    width: 250px;
-    background: #ddd;
+    width: 45%;
+    background: #eeeff1;
     border: none;
 
+    appearance: none;
+}
+
+.form__input--radio {
+    text-align: left;
+}
+
+.form__input--text-tel {
+    display: flex;
+    justify-content: space-between;
+}
+
+select {
+    -webkit-appearance: none;
     appearance: none;
 }
 
 .form__input--text-tel input {
     padding: 10px;
     height: 40px;
-    width: 100px;
-    background: #ddd;
+    width: 30%;
+    background: #eeeff1;
     border: none;
+    text-align: center;
 
     appearance: none;
+}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form__input--select {
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.form__group-content-select {
+    width: 50%;
+    padding: 10px 40px 10px 10px;
+    height: 40px;
+    background: #eeeff1;
+    border: none;
+    box-sizing: border-box;
+}
+
+.form__input--select::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translateY(-100%);
+    width: 0_;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid rgb(115, 87, 18);
+    pointer-events: none;
 }
 
 .form__button {
@@ -81,8 +148,7 @@
     width: 30%;
     height: 50px;
     border: none;
-    border-radius: 3px;
-    background: rgb(141, 109, 26);
+    background: rgb(115, 87, 18);
     color: #fff;
     cursor: pointer;
 }
