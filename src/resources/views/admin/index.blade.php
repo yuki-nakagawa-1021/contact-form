@@ -8,7 +8,7 @@
 <div class="header-utilities">
     <form class="form" action="/logout" method="post">
         @csrf
-        <button class="header-nav__button" type="submit">ログアウト</button>
+        <button class="header-nav__logout" type="submit">logout</button>
     </form>
 </div>
 @endsection
@@ -20,7 +20,7 @@
     </div>
     <form class="search-form" action="/search" method="get">
         <div class="search-form__item">
-            <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
+            <input class="search-form__item--keyword" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
             <select class="search-form__item-select" name="gender">
                 <option value="">性別</option>
                 <option value="1">男性</option>
@@ -33,19 +33,19 @@
                         <option value="{{ $category->id }}">{{ $category->content }}</option>
                     @endforeach
             </select>
-            <input class="search-form__item-input" type="date" name="date" value="{{ request('date') }}">
+            <input class="search-form__item-date" type="date" name="date" value="{{ request('date') }}">
         </div>
         <div class="search-form__button">
             <button class="search-form__button-submit" type="submit">検索</button>
             <button class="search-form__button-reset" type="reset">リセット</button>
         </div>
-        <div class="export-form__button">
-            <a class="export-form__button-export" href="{{ route('admin.export', request()->query()) }}">
-                エクスポート
-            </a>
-        </div>
     </form>
-     <div class="admin-pagination">
+    <div class="export-form__button">
+        <a class="export-form__button-export" href="{{ route('admin.export', request()->query()) }}">
+            エクスポート
+        </a>
+    </div>
+    <div class="admin-pagination">
             {{ $contacts->links('vendor.pagination.tailwind2') }}
     </div>
     <div class="admin-table">
@@ -55,6 +55,7 @@
                 <th class="admin-table__header">性別</th>
                 <th class="admin-table__header">メールアドレス</th>
                 <th class="admin-table__header">お問い合わせの種類</th>
+                <th class="admin-table__header"></th>
             </tr>
             @foreach ($contacts as $contact)
             <tr class="admin-table__row">

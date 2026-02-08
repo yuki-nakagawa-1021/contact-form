@@ -1,26 +1,36 @@
+body {
+    background: #ddd;
+}
+
 .login-form__content {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
 }
 
-.login-form__heading {
-    margin-bottom: 20px;
+.login-form__heading h2 {
+    margin-bottom: 30px;
     text-align: center;
+    color: rgb(115, 87, 18);
 }
 
 .form {
     margin: 0 auto;
-    width: 25%;
+    padding: 30px;
+    width: 40%;
     text-align: center;
+    background: #fff;
+    border-radius: 5px;
 }
 
 .form__group {
+    padding: 10px;
     margin-bottom: 5px;
 }
 
 .form__group-title {
     text-align: left;
+    color: rgb(115, 87, 18);
 }
 
 .form__error {
@@ -33,8 +43,9 @@
     padding: 10px;
     width: 100%;
     height: 40px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    border: none;
+    background: #eeeff1;
+    font-family: "Cormorant Garamond", serif;
 
     appearance: none;
 }
@@ -49,7 +60,7 @@
     height: 50px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: rgb(115, 87, 18);
     color: #fff;
     cursor: pointer;
 }

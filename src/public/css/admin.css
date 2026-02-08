@@ -1,3 +1,113 @@
+.admin__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.admin__heading h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgb(115, 87, 18);
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-form__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.search-form__item--keyword {
+    width:30%;
+    background:rgb(243, 242, 240);
+}
+.search-form__item--keyword,
+.search-form__item-select {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    background: #f8f5f5;
+}
+
+.search-form__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.search-form__button-submit,
+.search-form__button-reset {
+    height: 40px;
+    padding: 0 12px;
+}
+
+.search-form__button-submit {
+    color: #fff;
+    background: rgb(115, 87, 18);
+    border: none;
+}
+
+.search-form__button-reset {
+    color: #fff;
+    background: rgb(207, 190, 148);
+    border: none;
+}
+
+.export-form__button-export {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 15px;
+    background: rgb(231, 228, 221);
+    color: rgb(141, 109, 26);
+    text-decoration: none;
+}
+
+
+.admin-table {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.admin-table__inner {
+    width: 100%;
+    border: 1px solid #eeeff1
+}
+
+
+.admin-table__header {
+    color: #fff;
+    background: rgb(143, 126, 82);
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eeeff1
+}
+
+.admin-table__item {
+    color: rgb(143, 126, 82);
+    padding: 12px 16px;
+    border-bottom: 1px solid #eeeff1;
+}
+
+.admin-table__detail-button {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid rgb(231, 230, 229);
+    color: rgb(230, 228, 223);
+    text-decoration: none;
+}
+
+.admin-table__detail-button:hover {
+    opacity: .7;
+}
+
 svg.w-5.h-5 {
     width: 30px;
     height: 30px;
