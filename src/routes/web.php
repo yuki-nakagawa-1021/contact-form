@@ -21,12 +21,11 @@ Route::get('/', [ContactController::class, 'index'])->name('contact.index');
 Route::get('/confirm', function () {
     return redirect()->route('contact.index');
 });
+
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', function () {
-        return view('admin.index');
-    })->name('admin.index');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/export', [AdminController::class, 'export'])->name('admin.export');
 });

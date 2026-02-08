@@ -20,7 +20,7 @@
     </div>
     <form class="search-form" action="/search" method="get">
         <div class="search-form__item">
-            <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ {{ request('keyword') }}"">
+            <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
             <select class="search-form__item-select" name="gender">
                 <option value="">性別</option>
                 <option value="1">男性</option>
