@@ -36,12 +36,12 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--radio">
-                    <input type="radio" name="gender" value="1" id="man" checked />
-                    <label for="man">男性</label>
-                    <input type="radio" name="gender" value="2" id="woman" />
-                    <label for="woman">女性</label>
-                    <input type="radio" name="gender" value="3" id="other" />
-                    <label for="other">その他</label>
+                    <input type="radio" name="gender" value="1" id="gender_male" />
+                    <label for="gender_male">男性</label>
+                    <input type="radio" name="gender" value="2" id="gender_female" />
+                    <label for="gender_female">女性</label>
+                    <input type="radio" name="gender" value="3" id="gender_other" />
+                    <label for="gender_other">その他</label>
                 </div>
                 <div class="form__error">
                     @error('gender')
@@ -56,7 +56,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}"/>
+                    <input type="text" name="email" placeholder="test@example.com" value="{{ old('email') }}"/>
                 </div>
                 <div class="form__error">
                     @error('email')
@@ -78,13 +78,9 @@
                     <input type="tel" name="tel3" placeholder="5678" value="{{ old('tel3') }}"/>
                 </div>
                 <div class="form__error">
-                    <div class="form__error">
-                        <div class="form__error">
-                            @if ($errors->has('tel1') || $errors->has('tel2') || $errors->has('tel3'))
-                                {{ $errors->first('tel1') ?? $errors->first('tel2') ?? $errors->first('tel3') }}
-                            @endif
-                        </div>
-                    </div>
+                    @if ($errors->has('tel1') || $errors->has('tel2') || $errors->has('tel3'))
+                        {{ $errors->first('tel1') ?? $errors->first('tel2') ?? $errors->first('tel3') }}
+                    @endif
                 </div>
             </div>
         </div>
@@ -128,10 +124,10 @@
                         @endforeach
                     </select>
                     <div class="form__error">
-                    @error('category_id')
-                    {{ $message }}
-                    @enderror
-                </div>
+                        @error('category_id')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,11 +9,11 @@ body {
 
 .header__inner {
     margin: 0 auto;
-    padding: 8px 20px;
+    padding: 30px 20px;
     max-width: 1230px;
     text-align: center;
     position: relative;
-    height: 64px;
+    height: 80px;
 }
 
 .header__logo {

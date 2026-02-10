@@ -10,47 +10,51 @@
     color: rgb(115, 87, 18);
 }
 
-.search-form {
+.search__form {
+    margin-bottom: 30px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+
 }
 
 .search-form__item {
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex: 1;
+    gap: 40px;
 }
 
 .search-form__item--keyword {
-    width:30%;
+    width:300px;
     background:rgb(243, 242, 240);
 }
 .search-form__item--keyword,
-.search-form__item-select {
+.search-form__item-select,
+.search-form__item-date {
     height: 40px;
     padding: 0 12px;
     border: 1px solid #ddd;
     background: #f8f5f5;
+    color: rgb(141, 109, 26);
 }
 
 .search-form__button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 40px;
     white-space: nowrap;
 }
 
 .search-form__button-submit,
 .search-form__button-reset {
+    width: 100px;
     height: 40px;
     padding: 0 12px;
 }
 
 .search-form__button-submit {
     color: #fff;
-    background: rgb(115, 87, 18);
+    background: rgb(143, 126, 82);
     border: none;
 }
 
@@ -60,6 +64,12 @@
     border: none;
 }
 
+.admin__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .export-form__button-export {
     display: inline-block;
     margin: 10px;
@@ -67,6 +77,36 @@
     background: rgb(231, 228, 221);
     color: rgb(141, 109, 26);
     text-decoration: none;
+}
+
+.admin-pagination a[aria-label^="Go to page"],
+.admin-pagination span[aria-current="page"] span,
+.admin-pagination a[rel="prev"],
+.admin-pagination a[rel="next"] {
+    height: 36px;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: rgb(115, 87, 18);
+    text-decoration: none;
+    border-radius: 0;
+}
+
+.admin-pagination a[aria-label^="Go to page"]:hover,
+.admin-pagination a[rel="prev"]:hover,
+.admin-pagination a[rel="next"]:hover {
+    background: #ddd;
+    border-color: rgb(115, 87, 18);
+    color: rgb(143, 126, 82);
+}
+
+.admin-pagination span[aria-current="page"] span {
+    border-color: rgb(143, 126, 82);
+    background: rgb(143, 126, 82);
+    color: #fff;
 }
 
 
@@ -96,24 +136,119 @@
     border-bottom: 1px solid #eeeff1;
 }
 
+.admin-table__detail {
+    border-bottom: 1px solid #eeeff1;
+}
+
 .admin-table__detail-button {
     display: inline-block;
     padding: 6px 12px;
-    border: 1px solid rgb(231, 230, 229);
-    color: rgb(230, 228, 223);
+    border: 1px solid rgb(171, 169, 166);
+    color: rgb(171, 169, 166);
     text-decoration: none;
 }
 
-.admin-table__detail-button:hover {
-    opacity: .7;
-}
-
 svg.w-5.h-5 {
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 10px;
 }
 
-.admin-table__header:hover,
-.admin-table__item:hover {
+.admin-table__item:hover,
+.admin-table__detail-button:hover {
     background: #dfe7f7;
+}
+
+.contact-dialog__inner {
+    position: relative;
+}
+
+.contact-dialog {
+    width: 600px;
+    border: 1px solid rgb(143, 126, 82);
+    padding: 50px 20px;
+}
+
+.contact-dialog::backdrop {
+    background: rgba(0, 0, 0, .45);
+}
+
+.contact-dialog__inner {
+    position: relative;
+    padding: 18px 18px 16px;
+}
+
+.js-close-dialog {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 1;
+    color: #111827;
+    cursor: pointer;
+    transition: background .15s ease, transform .05s ease;
+}
+
+.js-close-dialog:hover {
+    background: #f3f4f6;
+}
+
+
+.contact-dialog__body {
+    padding: 6px 0 12px;
+}
+
+.contact-dialog__table {
+    width: 100%;
+    font-size: 14px;
+}
+
+.contact-dialog__table th,
+.contact-dialog__table td {
+    padding: 12px 12px;
+    vertical-align: top;
+}
+
+.contact-dialog__table th {
+    width: 180px;
+    color: rgb(143, 126, 82);;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.contact-dialog__table td {
+    color: rgb(143, 126, 82);;
+    word-break: break-word;
+}
+
+.contact-dialog__table tr:last-child th,
+.contact-dialog__table tr:last-child td {
+    border-bottom: none;
+}
+
+.contact-dialog__delete {
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+}
+
+.danger {
+    appearance: none;
+    border: none;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #ad2828;
+    color: #fff;
+}
+
+.danger:hover {
+    background: #f4cece;
 }

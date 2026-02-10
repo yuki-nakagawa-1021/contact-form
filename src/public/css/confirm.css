@@ -68,12 +68,14 @@
 
 .form__button {
     margin-top: 30px;
-    text-align: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
+    width: 10%;
     height: 50px;
     border: none;
     border-radius: 3px;
@@ -82,6 +84,16 @@
     cursor: pointer;
 }
 
-.form__button-back {
+.form__back-button {
+    background: none;
+    border: none;
+    padding: 0;
     color: rgb(115, 87, 18);
+    text-decoration: underline;
+    cursor: pointer;
+    font: inherit;
+}
+
+.form__back-button:hover {
+    opacity: .7;
 }

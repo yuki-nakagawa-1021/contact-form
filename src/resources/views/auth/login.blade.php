@@ -6,7 +6,7 @@
 
 @section('header')
 <div class="header-utilities">
-    <a class="header-nav__link" href="/register">
+    <a class="header-nav" href="/register">
         register
     </a>
 </div>

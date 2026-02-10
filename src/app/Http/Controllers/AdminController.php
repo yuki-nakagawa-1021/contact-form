@@ -57,4 +57,10 @@ class AdminController extends Controller
         ]);
     }
 
+    public function destroy(Contact $contact)
+    {
+        $contact->delete();
+        return redirect()->back()->with('message', '削除しました');
+    }
+
 }

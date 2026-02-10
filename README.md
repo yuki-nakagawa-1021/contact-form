@@ -10,7 +10,7 @@ Dockerビルド
 
 ### Laravel環境構築
 
-・docker-compose exec php bush
+・docker-compose exec php bash
 ・composer install
 ・cp .env.example.env
 ・php artisan key:generate
