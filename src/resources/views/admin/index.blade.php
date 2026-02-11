@@ -45,8 +45,8 @@
         </div>
     </form>
     <div class="admin__toolbar">
-        <div class="export-form__button">
-            <a class="export-form__button-export" href="{{ route('admin.export', request()->query()) }}">
+        <div class="export-form">
+            <a class="export-form__button"href="{{ route('admin.export') }}" class="btn">
                 エクスポート
             </a>
         </div>
@@ -110,14 +110,38 @@
 
         <div class="contact-dialog__body">
             <table class="contact-dialog__table">
-                <tr><th>お名前</th><td id="d-name"></td></tr>
-                <tr><th>性別</th><td id="d-gender"></td></tr>
-                <tr><th>メールアドレス</th><td id="d-email"></td></tr>
-                <tr><th>電話番号</th><td id="d-tel"></td></tr>
-                <tr><th>住所</th><td id="d-address"></td></tr>
-                <tr><th>建物名</th><td id="d-building"></td></tr>
-                <tr><th>お問い合わせの種類</th><td id="d-category"></td></tr>
-                <tr><th>お問い合わせ内容</th><td id="d-detail" style="white-space: pre-wrap;"></td></tr>
+                <tr>
+                    <th>お名前</th>
+                    <td id="d-name"></td>
+                </tr>
+                <tr>
+                    <th>性別</th>
+                    <td id="d-gender"></td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td id="d-email"></td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td id="d-tel"></td>
+                </tr>
+                <tr>
+                    <th>住所</th>
+                    <td id="d-address"></td>
+                </tr>
+                <tr>
+                    <th>建物名</th>
+                    <td id="d-building"></td>
+                </tr>
+                <tr>
+                    <th>お問い合わせの種類</th>
+                    <td id="d-category"></td>
+                </tr>
+                <tr>
+                    <th>お問い合わせ内容</th>
+                    <td id="d-detail" style="white-space: pre-wrap;"></td>
+                </tr>
             </table>
         </div>
         <div class="contact-dialog__delete">

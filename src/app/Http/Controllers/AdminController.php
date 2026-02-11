@@ -18,43 +18,37 @@ class AdminController extends Controller
             return view('admin.index', compact('contacts' , 'categories'));
     }
 
-    public function export(Request $request): StreamedResponse
+    public function export()
     {
-        $query = Contact::with('category')
-            ->keywordSearch($request->keyword)
-            ->genderSearch($request->gender)
-            ->categorySearch($request->category_id)
-            ->dateSearch($request->date)
-            ->latest();
+        $contacts = Contact::with('category')->get();
 
-        $fileName = 'contacts_' . now()->format('Ymd_His') . '.csv';
-
-        return response()->streamDownload(function () use ($query) {
-            $handle = fopen('php://output', 'w');
-
-            fwrite($handle, "\xEF\xBB\xBF");
-
-            fputcsv($handle, ['お名前', '性別', 'メールアドレス', 'お問い合わせの種類', 'お問い合わせ内容', '作成日']);
-
-            $query->chunk(500, function ($contacts) use ($handle) {
-                foreach ($contacts as $c) {
-                    $genderText = $c->gender == 1 ? '男性' : ($c->gender == 2 ? '女性' : 'その他');
-
-                    fputcsv($handle, [
-                        $c->last_name . ' ' . $c->first_name,
-                        $genderText,
-                        $c->email,
-                        optional($c->category)->content,
-                        $c->detail,
-                        optional($c->created_at)->format('Y-m-d'),
-                    ]);
-                }
-            });
-
-            fclose($handle);
-        }, $fileName, [
+        $headers = [
             'Content-Type' => 'text/csv; charset=UTF-8',
-        ]);
+            'Content-Disposition' => 'attachment; filename="contacts.csv"',
+        ];
+
+        $callback = function () use ($contacts) {
+            $out = fopen('php://output', 'w');
+
+            fwrite($out, "\xEF\xBB\xBF");
+
+            fputcsv($out, ['ID', '姓', '名', '性別', 'メール','お問い合わせの種類']);
+
+            foreach ($contacts as $c) {
+                fputcsv($out, [
+                    $c->id,
+                    $c->last_name,
+                    $c->first_name,
+                    $c->gender,
+                    $c->email,
+                    optional($c->category)->content,
+                ]);
+            }
+
+            fclose($out);
+        };
+
+        return response()->stream($callback, 200, $headers);
     }
 
     public function destroy(Contact $contact)
